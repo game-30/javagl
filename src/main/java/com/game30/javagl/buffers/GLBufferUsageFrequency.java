@@ -1,4 +1,4 @@
-package com.game30.graphics.javagl.buffers;
+package com.game30.javagl.buffers;
 
 /**
  * An enumeration of how frequently a OpenGL buffer can be written.  Frequency is very ambiguous and should be treated

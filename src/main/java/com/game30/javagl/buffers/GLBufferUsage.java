@@ -1,9 +1,11 @@
-package com.game30.graphics.javagl.buffers;
+package com.game30.javagl.buffers;
 
 import org.lwjgl.opengl.GL15;
 
-import com.game30.graphics.javagl.GLMagicInteger;
-import com.game30.graphics.javagl.GLMagicIntegerException;
+import com.game30.javagl.GLMagicInteger;
+import com.game30.javagl.GLMagicIntegerException;
+import com.game30.javagl.GLMagicInteger;
+import com.game30.javagl.GLMagicIntegerException;
 
 /**
  * An enumeration of the different usages of a OpenGL buffer.  These enumerations are the different combinations of
@@ -68,7 +70,7 @@ public enum GLBufferUsage implements GLMagicInteger {
      *
      * @param glInt the usage magic integer.
      * @return the corresponding GLBufferUsage.
-     * @throws com.game30.graphics.javagl.GLMagicIntegerException if the specified magic integer does not match a
+     * @throws com.game30.javagl.GLMagicIntegerException if the specified magic integer does not match a
      * enumeration instance.
      */
     public static GLBufferUsage fromGLInt(int glInt) throws GLMagicIntegerException {

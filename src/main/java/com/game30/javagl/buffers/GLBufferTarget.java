@@ -1,4 +1,4 @@
-package com.game30.graphics.javagl.buffers;
+package com.game30.javagl.buffers;
 
 import org.lwjgl.opengl.GL15;
 import org.lwjgl.opengl.GL21;
@@ -9,8 +9,9 @@ import org.lwjgl.opengl.GL42;
 import org.lwjgl.opengl.GL43;
 import org.lwjgl.opengl.GL44;
 
-import com.game30.graphics.javagl.GLMagicInteger;
-import com.game30.graphics.javagl.GLMagicIntegerException;
+import com.game30.javagl.GLMagicInteger;
+import com.game30.javagl.GLMagicIntegerException;
+import com.game30.javagl.GLMagicIntegerException;
 
 /**
  * An enumeration of the different binding targets for an OpenGL buffer.
@@ -114,12 +115,12 @@ public enum GLBufferTarget implements GLMagicInteger {
     ;
 
     /**
-     * Returns the {@link com.game30.graphics.javagl.buffers.GLBufferTarget} that corresponds to the specified OpenGL
+     * Returns the {@link GLBufferTarget} that corresponds to the specified OpenGL
      * magic integer.
      *
      * @param glInt the target magic integer.
-     * @return the corresponding {@link com.game30.graphics.javagl.buffers.GLBufferTarget}.
-     * @throws com.game30.graphics.javagl.GLMagicIntegerException if the specified magic integer does not match a
+     * @return the corresponding {@link GLBufferTarget}.
+     * @throws com.game30.javagl.GLMagicIntegerException if the specified magic integer does not match a
      * enumeration instance.
      */
     public static GLBufferTarget fromGLInt(int glInt) throws GLMagicIntegerException {
@@ -159,12 +160,12 @@ public enum GLBufferTarget implements GLMagicInteger {
     }
 
     /**
-     * Returns the {@link com.game30.graphics.javagl.buffers.GLBufferTarget} that corresponds to the specified OpenGL
+     * Returns the {@link GLBufferTarget} that corresponds to the specified OpenGL
      * magic binding integer.
      *
      * @param binding the target magic binding integer.
-     * @return the corresponding {@link com.game30.graphics.javagl.buffers.GLBufferTarget}.
-     * @throws com.game30.graphics.javagl.GLMagicIntegerException if the specified magic integer does not match a
+     * @return the corresponding {@link GLBufferTarget}.
+     * @throws com.game30.javagl.GLMagicIntegerException if the specified magic integer does not match a
      * enumeration instance.
      */
     public static GLBufferTarget fromBinding(int binding) throws GLMagicIntegerException {

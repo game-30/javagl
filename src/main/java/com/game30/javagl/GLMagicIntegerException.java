@@ -1,7 +1,7 @@
-package com.game30.graphics.javagl;
+package com.game30.javagl;
 
 /**
- * A {@link com.game30.graphics.javagl.GLException} specific to {@link com.game30.graphics.javagl.GLMagicInteger}s.
+ * A {@link GLException} specific to {@link GLMagicInteger}s.
  *
  * @author Brian Norman
  * @since 1.0

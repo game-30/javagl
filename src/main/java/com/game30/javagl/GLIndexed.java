@@ -1,4 +1,4 @@
-package com.game30.graphics.javagl;
+package com.game30.javagl;
 
 /**
  * Describes an object in OpenGL that is referenced by index.

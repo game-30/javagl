@@ -1,4 +1,4 @@
-package com.game30.graphics.javagl;
+package com.game30.javagl;
 
 /**
  * The base class for all runtime OpenGL exceptions.

@@ -1,4 +1,4 @@
-package com.game30.graphics.javagl;
+package com.game30.javagl;
 
 /**
  * A simple interface represents a OpenGL magic integer.  Magic integers are the integer values that represent something

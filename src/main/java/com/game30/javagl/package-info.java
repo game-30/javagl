@@ -7,4 +7,4 @@
  * @author Brian Norman
  * @since 1.0
  */
-package com.game30.graphics.javagl;
+package com.game30.javagl;

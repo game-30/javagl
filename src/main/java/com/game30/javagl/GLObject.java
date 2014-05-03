@@ -1,4 +1,4 @@
-package com.game30.graphics.javagl;
+package com.game30.javagl;
 
 /**
  * An OpenGL construct that contains some state.  They can be bound to the current context and their state is added to

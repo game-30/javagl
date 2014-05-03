@@ -1,4 +1,4 @@
-package com.game30.graphics.javagl.buffers;
+package com.game30.javagl.buffers;
 
 /**
  * An enumeration of the different ways a program can interact with an OpenGL buffer.
