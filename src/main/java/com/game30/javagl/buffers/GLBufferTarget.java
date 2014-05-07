@@ -120,7 +120,7 @@ public enum GLBufferTarget implements GLMagicInteger {
      *
      * @param glInt the target magic integer.
      * @return the corresponding {@link GLBufferTarget}.
-     * @throws com.game30.javagl.GLMagicIntegerException if the specified magic integer does not match a
+     * @throws GLMagicIntegerException if the specified magic integer does not match a
      * enumeration instance.
      */
     public static GLBufferTarget fromGLInt(int glInt) throws GLMagicIntegerException {
@@ -165,7 +165,7 @@ public enum GLBufferTarget implements GLMagicInteger {
      *
      * @param binding the target magic binding integer.
      * @return the corresponding {@link GLBufferTarget}.
-     * @throws com.game30.javagl.GLMagicIntegerException if the specified magic integer does not match a
+     * @throws GLMagicIntegerException if the specified magic integer does not match a
      * enumeration instance.
      */
     public static GLBufferTarget fromBinding(int binding) throws GLMagicIntegerException {

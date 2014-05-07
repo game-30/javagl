@@ -70,7 +70,7 @@ public enum GLBufferUsage implements GLMagicInteger {
      *
      * @param glInt the usage magic integer.
      * @return the corresponding GLBufferUsage.
-     * @throws com.game30.javagl.GLMagicIntegerException if the specified magic integer does not match a
+     * @throws GLMagicIntegerException if the specified magic integer does not match a
      * enumeration instance.
      */
     public static GLBufferUsage fromGLInt(int glInt) throws GLMagicIntegerException {
