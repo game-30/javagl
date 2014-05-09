@@ -7,7 +7,8 @@ package com.game30.javagl;
  *
  * @author Brian Norman
  * @see <a href="http://www.opengl.org/wiki/OpenGL_Object">OpenGL Object on OpenGL wiki</a>
- * @since 1.0
+ * @version 1.0.0-SNAPSHOT
+ * @since 1.0.0
  */
 public interface GLObject extends GLIndexed, GLDeletable, GLBindable {
     /* Implementation Details:

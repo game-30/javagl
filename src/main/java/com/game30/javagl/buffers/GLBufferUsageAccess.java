@@ -4,7 +4,8 @@ package com.game30.javagl.buffers;
  * An enumeration of the different ways a program can interact with an OpenGL buffer.
  *
  * @author Brian Norman
- * @since 1.0
+ * @version 1.0.0-SNAPSHOT
+ * @since 1.0.0
  */
 public enum GLBufferUsageAccess {
 

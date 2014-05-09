@@ -18,7 +18,8 @@ import com.game30.javagl.GLMagicIntegerException;
  *
  * @author Brian Norman
  * @see <a href="http://www.opengl.org/wiki/Buffer_Object#General_use">Buffer Targets on OpenGL wiki</a>
- * @since 1.0
+ * @version 1.0.0-SNAPSHOT
+ * @since 1.0.0
  */
 public enum GLBufferTarget implements GLMagicInteger {
 

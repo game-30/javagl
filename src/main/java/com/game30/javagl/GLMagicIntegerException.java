@@ -4,7 +4,8 @@ package com.game30.javagl;
  * A {@link GLException} specific to {@link GLMagicInteger}s.
  *
  * @author Brian Norman
- * @since 1.0
+ * @version 1.0.0-SNAPSHOT
+ * @since 1.0.0
  */
 public class GLMagicIntegerException extends GLException {
 

@@ -6,7 +6,8 @@ package com.game30.javagl;
  * an enumeration to define the valid options and still supply the lower level integer to OpenGL.
  *
  * @author Brian Norman
- * @since 1.0
+ * @version 1.0.0-SNAPSHOT
+ * @since 1.0.0
  */
 public interface GLMagicInteger {
 

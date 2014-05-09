@@ -4,7 +4,8 @@ package com.game30.javagl;
  * The base class for all runtime OpenGL exceptions.
  *
  * @author Brian Norman
- * @since 1.0
+ * @version 1.0.0-SNAPSHOT
+ * @since 1.0.0
  */
 public abstract class GLException extends RuntimeException {
 

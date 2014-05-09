@@ -4,7 +4,8 @@ package com.game30.javagl;
  * Describes an object in OpenGL that can be bound and unbound to the current context.
  *
  * @author Brian Norman
- * @since 1.0
+ * @version 1.0.0-SNAPSHOT
+ * @since 1.0.0
  */
 public interface GLBindable {
 

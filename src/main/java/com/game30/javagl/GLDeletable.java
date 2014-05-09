@@ -4,7 +4,8 @@ package com.game30.javagl;
  * Describes an object in OpenGL that can be deleted.
  *
  * @author Brian Norman
- * @since 1.0
+ * @version 1.0.0-SNAPSHOT
+ * @since 1.0.0
  */
 public interface GLDeletable {
 
@@ -28,9 +29,10 @@ public interface GLDeletable {
     // ============================== //
 
     /**
-     * Validates that the GLDeletable still exists.  If it does not exist, a NullPointerException is thrown.
+     * Validates that the specified GLDeletable still exists.  If it does not exist, a NullPointerException is thrown.
      *
      * @param deletable the OpenGL deletable object that needs to exist.
+     * @return returns the specified GLDeletable object.
      * @throws NullPointerException if the OpenGL deletable object does not exist.
      */
     static <T extends GLDeletable> T requireExists(T deletable) {
