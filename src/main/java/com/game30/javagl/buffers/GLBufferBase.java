@@ -13,6 +13,9 @@ import com.game30.javagl.GLObjectBase;
  */
 public class GLBufferBase extends GLObjectBase implements GLBuffer {
 
+    /** The buffer primitive type. */
+    private final GLBufferType type;
+
     /** The buffer bind target. */
     private final GLBufferTarget target;
 
@@ -20,15 +23,22 @@ public class GLBufferBase extends GLObjectBase implements GLBuffer {
     private final GLBufferUsage usage;
 
     /**
-     * Constructs a GLBufferBase instance with the specified bind target and usage pattern.
+     * Constructs a GLBufferBase instance with the specified primitive type, bind target and usage pattern.
      *
+     * @param type the buffer primitive type.
      * @param target the buffer bind target.
      * @param usage the buffer usage pattern.
      */
-    protected GLBufferBase(GLBufferTarget target, GLBufferUsage usage) {
+    protected GLBufferBase(GLBufferType type, GLBufferTarget target, GLBufferUsage usage) {
         super(GL15.glGenBuffers());
+        this.type = type;
         this.target = target;
         this.usage = usage;
+    }
+
+    @Override
+    public GLBufferType getType() {
+        return type;
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.game30.javagl.buffers;
 
+import java.nio.Buffer;
+
 import org.lwjgl.opengl.GL15;
 
 import com.game30.javagl.GLDeletable;
@@ -13,8 +15,9 @@ import com.game30.javagl.GLObject;
  * buffer needs to exist.
  *
  * <p />This interface provides some simple usage of an OpenGL buffer.  Since a buffer is an OpenGL object, it can be
- * bound and unbound from the current context.  Each buffer has a specific target that it is bound to.  Only one buffer
- * can be bound to a specific usage at a time.  A buffer must be bound for data to be read or written to it.
+ * bound and unbound from the current context.  Each buffer has a specific {@link GLBufferTarget} that it is bound to.
+ * Only one buffer can be bound to a specific usage at a time.  A buffer must be bound for data to be read or written to
+ * it.
  *
  * <p />OpenGL buffers also have an expected usage pattern.  This describes to OpenGL how the buffer will be used.
  * Buffers can be read-only, write-only, or have no access by the processor.  The buffer can be considered static,
@@ -49,6 +52,13 @@ public interface GLBuffer extends GLObject {
         GLDeletable.requireExists(this);
         GL15.glBindBuffer(getTarget().glInt(), GLIndexed.NULL_INDEX);
     }
+
+    /**
+     * Returns the primitive type which the buffer object stores.
+     *
+     * @return buffer primitive type.
+     */
+    GLBufferType getType();
 
     /**
      * Returns the target to which the buffer object is bound.
