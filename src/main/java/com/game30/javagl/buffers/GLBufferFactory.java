@@ -14,7 +14,7 @@ public interface GLBufferFactory {
      *
      * @return default buffer factory.
      */
-    static GLBufferFactory createDefault() {
+    static GLBufferFactory getDefault() {
         return GLBufferBase::new;
     }
 
