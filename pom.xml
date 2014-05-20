@@ -27,6 +27,11 @@
 
     <developers>
         <developer>
+            <name>Jeremiah Carpenter</name>
+            <url>https://github.com/edmundjc</url>
+            <id>edmundjc</id>
+        </developer>
+        <developer>
             <name>Brian Norman</name>
             <url>https://github.com/bnorm</url>
             <id>bnorm</id>
