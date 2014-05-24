@@ -11,27 +11,26 @@ import org.lwjgl.opengl.GL44;
 
 import com.game30.javagl.GLMagicInteger;
 import com.game30.javagl.GLMagicIntegerException;
-import com.game30.javagl.GLMagicIntegerException;
 
 /**
  * An enumeration of the different binding targets for an OpenGL buffer.
  *
  * @author Brian Norman
- * @see <a href="http://www.opengl.org/wiki/Buffer_Object#General_use">Buffer Targets on OpenGL wiki</a>
  * @version 1.0.0-SNAPSHOT
+ * @see <a href="http://www.opengl.org/wiki/Buffer_Object#General_use">Buffer Targets on OpenGL wiki</a>
  * @since 1.0.0
  */
 public enum GLBufferTarget implements GLMagicInteger {
 
     /**
-     * The buffer will be used as a source for vertex data, but only when glVertexAttribPointer​ is called.  The pointer
+     * The buffer will be used as a source for vertex data, but only when glVertexAttribPointer is called.  The pointer
      * field of this function is taken as a byte offset from the beginning of whatever buffer is currently bound to this
      * target.
      */
     Array(GL15.GL_ARRAY_BUFFER, GL15.GL_ARRAY_BUFFER_BINDING),
 
     /**
-     * All rendering functions of the form gl*Draw*Elements*​ will use the pointer field as a byte offset from the
+     * All rendering functions of the form gl*Draw*Elements* will use the pointer field as a byte offset from the
      * beginning of the buffer object bound to this target.  The indices used for indexed rendering will be taken from
      * the buffer object.  Note that this binding target is part of a Vertex Array Objects state, so a VAO must be bound
      * before binding a buffer here.
@@ -39,15 +38,15 @@ public enum GLBufferTarget implements GLMagicInteger {
     ElementArray(GL15.GL_ELEMENT_ARRAY_BUFFER, GL15.GL_ELEMENT_ARRAY_BUFFER_BINDING),
 
     /**
-     * This is for performing asynchronous pixel transfer operations.  If a buffer is bound to PixelPack, glGetTexImage​
-     * and glReadPixels​ will store their data to the bound buffer object instead of where a client pointer points.
+     * This is for performing asynchronous pixel transfer operations.  If a buffer is bound to PixelPack, glGetTexImage
+     * and glReadPixels will store their data to the bound buffer object instead of where a client pointer points.
      */
     PixelPack(GL21.GL_PIXEL_PACK_BUFFER, GL21.GL_PIXEL_PACK_BUFFER_BINDING),
 
     /**
-     * This is for performing asynchronous pixel transfer operations.  If a buffer is bound to PixelUnpack,
-     * glTexImage*​, glTexSubImage*​, glCompressedTexImage*​, and glCompressedTexSubImage*​ are all affected.  These
-     * functions will read their data from the bound buffer object instead of where a client pointer points.
+     * This is for performing asynchronous pixel transfer operations.  If a buffer is bound to PixelUnpack, glTexImage*,
+     * glTexSubImage*, glCompressedTexImage*, and glCompressedTexSubImage* are all affected.  These functions will read
+     * their data from the bound buffer object instead of where a client pointer points.
      */
     PixelUnpack(GL21.GL_PIXEL_UNPACK_BUFFER, GL21.GL_PIXEL_UNPACK_BUFFER_BINDING),
 
@@ -58,14 +57,14 @@ public enum GLBufferTarget implements GLMagicInteger {
 
     /**
      * This has no particular semantics.  Because it has no actual meaning, it is a useful target for copying buffer
-     * object data with glCopyBufferSubData​.  You do not have to use this target when copying, but by using it, you
+     * object data with glCopyBufferSubData.  You do not have to use this target when copying, but by using it, you
      * avoid disturbing buffer targets that have actual semantics.
      */
     CopyRead(GL31.GL_COPY_READ_BUFFER, GL31.GL_COPY_READ_BUFFER_BINDING),
 
     /**
      * This has no particular semantics.  Because it has no actual meaning, it is a useful target for copying buffer
-     * object data with glCopyBufferSubData​.  You do not have to use this target when copying, but by using it, you
+     * object data with glCopyBufferSubData.  You do not have to use this target when copying, but by using it, you
      * avoid disturbing buffer targets that have actual semantics.
      */
     CopyWrite(GL31.GL_COPY_WRITE_BUFFER, GL31.GL_COPY_WRITE_BUFFER_BINDING),
@@ -95,7 +94,7 @@ public enum GLBufferTarget implements GLMagicInteger {
 
     /**
      * The buffer bound to this target will be used as the source for indirect compute dispatch operations, via
-     * glDispatchComputeIndirect​.  This requires OpenGL 4.3 or ARB_compute_shader.
+     * glDispatchComputeIndirect.  This requires OpenGL 4.3 or ARB_compute_shader.
      */
     DispatchIndirect(GL43.GL_DISPATCH_INDIRECT_BUFFER, GL43.GL_DISPATCH_INDIRECT_BUFFER_BINDING),
 
@@ -107,8 +106,7 @@ public enum GLBufferTarget implements GLMagicInteger {
 
     /**
      * This is for performing direct writes from asynchronous queries to buffer object memory.  If a buffer is bound to
-     * Query, then all glGetQueryObject​ function calls will write the result to an offset into the bound buffer
-     * object.
+     * Query, then all glGetQueryObject function calls will write the result to an offset into the bound buffer object.
      */
     Query(GL44.GL_QUERY_BUFFER, GL44.GL_QUERY_BUFFER_BINDING),
 
@@ -116,13 +114,11 @@ public enum GLBufferTarget implements GLMagicInteger {
     ;
 
     /**
-     * Returns the {@link GLBufferTarget} that corresponds to the specified OpenGL
-     * magic integer.
+     * Returns the {@link GLBufferTarget} that corresponds to the specified OpenGL magic integer.
      *
      * @param glInt the target magic integer.
      * @return the corresponding {@link GLBufferTarget}.
-     * @throws GLMagicIntegerException if the specified magic integer does not match a
-     * enumeration instance.
+     * @throws GLMagicIntegerException if the specified magic integer does not match a enumeration instance.
      */
     public static GLBufferTarget fromGLInt(int glInt) throws GLMagicIntegerException {
         // While it may not be the most elegant, switch is definitely the fastest.
@@ -161,13 +157,11 @@ public enum GLBufferTarget implements GLMagicInteger {
     }
 
     /**
-     * Returns the {@link GLBufferTarget} that corresponds to the specified OpenGL
-     * magic binding integer.
+     * Returns the {@link GLBufferTarget} that corresponds to the specified OpenGL magic binding integer.
      *
      * @param binding the target magic binding integer.
      * @return the corresponding {@link GLBufferTarget}.
-     * @throws GLMagicIntegerException if the specified magic integer does not match a
-     * enumeration instance.
+     * @throws GLMagicIntegerException if the specified magic integer does not match a enumeration instance.
      */
     public static GLBufferTarget fromBinding(int binding) throws GLMagicIntegerException {
         // While it may not be the most elegant, switch is definitely the fastest.

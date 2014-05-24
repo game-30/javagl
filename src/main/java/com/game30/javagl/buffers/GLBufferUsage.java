@@ -4,8 +4,6 @@ import org.lwjgl.opengl.GL15;
 
 import com.game30.javagl.GLMagicInteger;
 import com.game30.javagl.GLMagicIntegerException;
-import com.game30.javagl.GLMagicInteger;
-import com.game30.javagl.GLMagicIntegerException;
 
 /**
  * An enumeration of the different usages of a OpenGL buffer.  These enumerations are the different combinations of
@@ -71,8 +69,7 @@ public enum GLBufferUsage implements GLMagicInteger {
      *
      * @param glInt the usage magic integer.
      * @return the corresponding GLBufferUsage.
-     * @throws GLMagicIntegerException if the specified magic integer does not match a
-     * enumeration instance.
+     * @throws GLMagicIntegerException if the specified magic integer does not match a enumeration instance.
      */
     public static GLBufferUsage fromGLInt(int glInt) throws GLMagicIntegerException {
         // While it may not be the most elegant, switch is definitely the fastest.

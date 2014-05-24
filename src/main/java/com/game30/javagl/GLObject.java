@@ -6,8 +6,8 @@ package com.game30.javagl;
  * this is how changes to objects are made.
  *
  * @author Brian Norman
- * @see <a href="http://www.opengl.org/wiki/OpenGL_Object">OpenGL Object on OpenGL wiki</a>
  * @version 1.0.0-SNAPSHOT
+ * @see <a href="http://www.opengl.org/wiki/OpenGL_Object">OpenGL Object on OpenGL wiki</a>
  * @since 1.0.0
  */
 public interface GLObject extends GLIndexed, GLDeletable, GLBindable {
