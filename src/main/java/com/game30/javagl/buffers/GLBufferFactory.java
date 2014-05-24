@@ -1,5 +1,7 @@
 package com.game30.javagl.buffers;
 
+import java.nio.Buffer;
+
 /**
  * A factory interface for {@link GLBuffer}s.
  *
@@ -28,4 +30,18 @@ public interface GLBufferFactory {
      * @return a new OpenGL buffer.
      */
     GLBuffer create(GLBufferType type, GLBufferTarget target, GLBufferUsage usage);
+
+    /**
+     * Creates a new OpenGL buffer from the specified parameters.
+     *
+     * @param target the bind target for the buffer.
+     * @param usage the usage pattern for the buffer.
+     * @param data the data the buffer should contain.
+     * @return a new OpenGL buffer.
+     */
+    default GLBuffer create(GLBufferTarget target, GLBufferUsage usage, Buffer data) {
+        GLBuffer buffer = create(GLBufferType.getType(data), target, usage);
+        buffer.write(data);
+        return buffer;
+    }
 }
