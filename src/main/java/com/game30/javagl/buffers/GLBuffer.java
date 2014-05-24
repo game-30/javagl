@@ -73,4 +73,52 @@ public interface GLBuffer extends GLObject {
      * @return buffer usage.
      */
     GLBufferUsage getUsage();
+
+    /**
+     * Reads data from the OpenGL buffer and returns it as a {@link Buffer}.
+     *
+     * @return data from buffer.
+     */
+    default Buffer read() {
+        if (GLBufferUsageAccess.Read != getUsage().getAccess()) {
+            throw new GLBufferException("Cannot read data to a [" + getUsage() + "] buffer.");
+        }
+        bind();
+        int size = getType().fromByteSize(GL15.glGetBufferParameteri(getTarget().glInt(), GL15.GL_BUFFER_SIZE));
+        Buffer buffer = getType().readFromBuffer(getTarget(), 0, size);
+        unbind();
+        return buffer;
+    }
+
+    /**
+     * Reads data from the OpenGL buffer at the specific offset for the specific length and returns it as a {@link
+     * Buffer}.
+     *
+     * @param offset the offset to start the read.
+     * @param length the length of the read.
+     * @return data from buffer range.
+     */
+    default Buffer read(int offset, int length) {
+        if (GLBufferUsageAccess.Read != getUsage().getAccess()) {
+            throw new GLBufferException("Cannot read data to a [" + getUsage() + "] buffer.");
+        }
+        bind();
+        Buffer buffer = getType().readFromBuffer(getTarget(), offset, length);
+        unbind();
+        return buffer;
+    }
+
+    /**
+     * Writes data to the OpenGL buffer.
+     *
+     * @param data data to write.
+     */
+    default void write(Buffer data) {
+        if (GLBufferUsageAccess.Write != getUsage().getAccess()) {
+            throw new GLBufferException("Cannot write data to a [" + getUsage() + "] buffer.");
+        }
+        bind();
+        getType().writeToBuffer(getTarget(), data, getUsage());
+        unbind();
+    }
 }
