@@ -37,6 +37,12 @@ public class GLBufferBase extends GLObjectBase implements GLBuffer {
     }
 
     @Override
+    public void delete() {
+        GLBuffer.super.delete();
+        super.delete();
+    }
+
+    @Override
     public GLBufferType getType() {
         return type;
     }

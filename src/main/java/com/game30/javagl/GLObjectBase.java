@@ -10,7 +10,10 @@ package com.game30.javagl;
 public abstract class GLObjectBase implements GLObject {
 
     /** The index of the GLObject. */
-    private int index;
+    private final int index;
+
+    /** If the GLObject exists. */
+    private boolean exists;
 
     /**
      * Constructs a GLObjectBase instance with the specified index.
@@ -19,11 +22,27 @@ public abstract class GLObjectBase implements GLObject {
      */
     protected GLObjectBase(int index) {
         this.index = index;
+        this.exists = (index != GLIndexed.NULL_INDEX);
     }
 
     @Override
     public int getIndex() {
         return index;
+    }
+
+    @Override
+    public boolean exists() {
+        return exists;
+    }
+
+    @Override
+    public void delete() {
+        exists = false;
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "[index=" + getIndex() + "]";
     }
 
     @Override

@@ -10,18 +10,18 @@ package com.game30.javagl;
 public interface GLDeletable {
 
     /**
-     * Deletes the OpenGL object.  The object does not need to be bound to delete the object but other objects
-     * associated with the object will need to be deleted in sequence.
-     */
-    void delete();
-
-    /**
      * Returns {@code true} if the OpenGL object exists.  This may or may not make the request of OpenGL or just keep
      * the state internally.
      *
      * @return if the OpenGL object exists.
      */
     boolean exists();
+
+    /**
+     * Deletes the OpenGL object.  The object does not need to be bound to delete the object but other objects
+     * associated with the object will need to be deleted in sequence.
+     */
+    void delete();
 
 
     // ============================== //
