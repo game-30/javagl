@@ -8,7 +8,7 @@ import java.nio.IntBuffer;
 import java.nio.ShortBuffer;
 
 import org.lwjgl.BufferUtils;
-import org.lwjgl.opengl.GL15;
+import org.lwjgl.opengl.EXTDirectStateAccess;
 
 /**
  * An enumeration of the different primitive types which an OpenGL buffer can store.
@@ -33,15 +33,15 @@ public enum GLBufferType {
         }
 
         @Override
-        ByteBuffer readFromBuffer(GLBufferTarget target, long offset, int length) {
+        ByteBuffer readFromBuffer(GLBuffer buffer, long offset, int length) {
             ByteBuffer data = BufferUtils.createByteBuffer(length);
-            GL15.glGetBufferSubData(target.glInt(), offset, data);
+            EXTDirectStateAccess.glNamedBufferSubDataEXT(buffer.getIndex(), offset, data);
             return data;
         }
 
         @Override
-        void writeToBuffer(GLBufferTarget target, Buffer data, GLBufferUsage usage) {
-            GL15.glBufferData(target.glInt(), (ByteBuffer) data, usage.glInt());
+        void writeToBuffer(GLBuffer buffer, Buffer data, GLBufferUsage usage) {
+            EXTDirectStateAccess.glNamedBufferDataEXT(buffer.getIndex(), (ByteBuffer) data, usage.glInt());
         }
     },
 
@@ -55,15 +55,15 @@ public enum GLBufferType {
         }
 
         @Override
-        ShortBuffer readFromBuffer(GLBufferTarget target, long offset, int length) {
+        ShortBuffer readFromBuffer(GLBuffer buffer, long offset, int length) {
             ShortBuffer data = BufferUtils.createShortBuffer(length);
-            GL15.glGetBufferSubData(target.glInt(), offset, data);
+            EXTDirectStateAccess.glNamedBufferSubDataEXT(buffer.getIndex(), offset, data);
             return data;
         }
 
         @Override
-        void writeToBuffer(GLBufferTarget target, Buffer data, GLBufferUsage usage) {
-            GL15.glBufferData(target.glInt(), (ShortBuffer) data, usage.glInt());
+        void writeToBuffer(GLBuffer buffer, Buffer data, GLBufferUsage usage) {
+            EXTDirectStateAccess.glNamedBufferDataEXT(buffer.getIndex(), (ShortBuffer) data, usage.glInt());
         }
     },
 
@@ -77,15 +77,15 @@ public enum GLBufferType {
         }
 
         @Override
-        IntBuffer readFromBuffer(GLBufferTarget target, long offset, int length) {
+        IntBuffer readFromBuffer(GLBuffer buffer, long offset, int length) {
             IntBuffer data = BufferUtils.createIntBuffer(length);
-            GL15.glGetBufferSubData(target.glInt(), offset, data);
+            EXTDirectStateAccess.glNamedBufferSubDataEXT(buffer.getIndex(), offset, data);
             return data;
         }
 
         @Override
-        void writeToBuffer(GLBufferTarget target, Buffer data, GLBufferUsage usage) {
-            GL15.glBufferData(target.glInt(), (IntBuffer) data, usage.glInt());
+        void writeToBuffer(GLBuffer buffer, Buffer data, GLBufferUsage usage) {
+            EXTDirectStateAccess.glNamedBufferDataEXT(buffer.getIndex(), (IntBuffer) data, usage.glInt());
         }
     },
 
@@ -99,15 +99,15 @@ public enum GLBufferType {
         }
 
         @Override
-        FloatBuffer readFromBuffer(GLBufferTarget target, long offset, int length) {
+        FloatBuffer readFromBuffer(GLBuffer buffer, long offset, int length) {
             FloatBuffer data = BufferUtils.createFloatBuffer(length);
-            GL15.glGetBufferSubData(target.glInt(), offset, data);
+            EXTDirectStateAccess.glNamedBufferSubDataEXT(buffer.getIndex(), offset, data);
             return data;
         }
 
         @Override
-        void writeToBuffer(GLBufferTarget target, Buffer data, GLBufferUsage usage) {
-            GL15.glBufferData(target.glInt(), (FloatBuffer) data, usage.glInt());
+        void writeToBuffer(GLBuffer buffer, Buffer data, GLBufferUsage usage) {
+            EXTDirectStateAccess.glNamedBufferDataEXT(buffer.getIndex(), (FloatBuffer) data, usage.glInt());
         }
     },
 
@@ -121,15 +121,15 @@ public enum GLBufferType {
         }
 
         @Override
-        DoubleBuffer readFromBuffer(GLBufferTarget target, long offset, int length) {
+        DoubleBuffer readFromBuffer(GLBuffer buffer, long offset, int length) {
             DoubleBuffer data = BufferUtils.createDoubleBuffer(length);
-            GL15.glGetBufferSubData(target.glInt(), offset, data);
+            EXTDirectStateAccess.glNamedBufferSubDataEXT(buffer.getIndex(), offset, data);
             return data;
         }
 
         @Override
-        void writeToBuffer(GLBufferTarget target, Buffer data, GLBufferUsage usage) {
-            GL15.glBufferData(target.glInt(), (DoubleBuffer) data, usage.glInt());
+        void writeToBuffer(GLBuffer buffer, Buffer data, GLBufferUsage usage) {
+            EXTDirectStateAccess.glNamedBufferDataEXT(buffer.getIndex(), (DoubleBuffer) data, usage.glInt());
         }
     },
 
@@ -190,19 +190,19 @@ public enum GLBufferType {
     /**
      * Reads the buffer bound to the specified target starting from the specified offset and for the specified length.
      *
-     * @param target buffer target to read.
+     * @param buffer the buffer from which to read.
      * @param offset offset to start reading.
      * @param length length to read.
      * @return the data read from the bound buffer.
      */
-    abstract Buffer readFromBuffer(GLBufferTarget target, long offset, int length);
+    abstract Buffer readFromBuffer(GLBuffer buffer, long offset, int length);
 
     /**
      * Writes the specified buffer data too the buffer bound to the specified target with the specified usage pattern.
      *
-     * @param target buffer target to write.
+     * @param buffer the buffer to which to write.
      * @param data data to write to the bound buffer.
      * @param usage usage pattern to set on the bound buffer.
      */
-    abstract void writeToBuffer(GLBufferTarget target, Buffer data, GLBufferUsage usage);
+    abstract void writeToBuffer(GLBuffer buffer, Buffer data, GLBufferUsage usage);
 }

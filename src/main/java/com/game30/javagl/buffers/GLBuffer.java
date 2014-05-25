@@ -2,6 +2,7 @@ package com.game30.javagl.buffers;
 
 import java.nio.Buffer;
 
+import org.lwjgl.opengl.EXTDirectStateAccess;
 import org.lwjgl.opengl.GL15;
 
 import com.game30.javagl.GLDeletable;
@@ -83,11 +84,9 @@ public interface GLBuffer extends GLObject {
         if (GLBufferUsageAccess.Read != getUsage().getAccess()) {
             throw new GLBufferException("Cannot read data to a [" + getUsage() + "] buffer.");
         }
-        bind();
-        int size = getType().fromByteSize(GL15.glGetBufferParameteri(getTarget().glInt(), GL15.GL_BUFFER_SIZE));
-        Buffer buffer = getType().readFromBuffer(getTarget(), 0, size);
-        unbind();
-        return buffer;
+        int size = getType().fromByteSize(
+                EXTDirectStateAccess.glGetNamedBufferParameterEXT(getIndex(), GL15.GL_BUFFER_SIZE));
+        return getType().readFromBuffer(this, 0, size);
     }
 
     /**
@@ -102,10 +101,7 @@ public interface GLBuffer extends GLObject {
         if (GLBufferUsageAccess.Read != getUsage().getAccess()) {
             throw new GLBufferException("Cannot read data to a [" + getUsage() + "] buffer.");
         }
-        bind();
-        Buffer buffer = getType().readFromBuffer(getTarget(), offset, length);
-        unbind();
-        return buffer;
+        return getType().readFromBuffer(this, offset, length);
     }
 
     /**
@@ -117,8 +113,6 @@ public interface GLBuffer extends GLObject {
         if (GLBufferUsageAccess.Write != getUsage().getAccess()) {
             throw new GLBufferException("Cannot write data to a [" + getUsage() + "] buffer.");
         }
-        bind();
-        getType().writeToBuffer(getTarget(), data, getUsage());
-        unbind();
+        getType().writeToBuffer(this, data, getUsage());
     }
 }
