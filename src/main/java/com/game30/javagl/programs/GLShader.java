@@ -1,4 +1,4 @@
-package com.game30.javagl.shaders;
+package com.game30.javagl.programs;
 
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;

@@ -1,4 +1,4 @@
-package com.game30.javagl.shaders;
+package com.game30.javagl.programs;
 
 import com.game30.javagl.GLIndexed;
 
