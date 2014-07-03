@@ -152,7 +152,7 @@ public enum GLBufferType {
             return GLBufferType.Integer;
         } else if (DoubleBuffer.class.isInstance(buffer)) {
             return GLBufferType.Double;
-        } else if (Short.class.isInstance(buffer)) {
+        } else if (ShortBuffer.class.isInstance(buffer)) {
             return GLBufferType.Short;
         } else {
             throw new GLBufferException("Specified buffer [" + buffer + "] is not a supported OpenGL buffer type");
