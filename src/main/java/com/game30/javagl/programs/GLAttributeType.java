@@ -57,10 +57,10 @@ public enum GLAttributeType implements GLMagicInteger {
     ;
 
     /**
-     * Returns the GLShaderStage that corresponds to the specified OpenGL magic integer.
+     * Returns the GLAttributeType that corresponds to the specified OpenGL magic integer.
      *
      * @param glInt the stage magic integer.
-     * @return the corresponding GLShaderStage.
+     * @return the corresponding GLAttributeType.
      * @throws GLMagicIntegerException if the specified magic integer does not match a enumeration instance.
      */
     public static GLAttributeType fromGLInt(int glInt) throws GLMagicIntegerException {

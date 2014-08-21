@@ -30,7 +30,7 @@ public class GLAttributeBase implements GLAttribute {
     private int offset;
 
     /**
-     * Constructs a GLBufferBase instance with the specified index and name, using the default values for the rest of
+     * Constructs a GLAttributeBase instance with the specified index and name, using the default values for the rest of
      * the attribute properties.
      *
      * @param index the attribute index.
@@ -47,7 +47,7 @@ public class GLAttributeBase implements GLAttribute {
     }
 
     /**
-     * Constructs a GLBufferBase instance with the specified index, name, and all of the attribute properties.
+     * Constructs a GLAttributeBase instance with the specified index, name, and all of the attribute properties.
      *
      * @param index the attribute index.
      * @param name the attribute name.
