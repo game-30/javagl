@@ -26,10 +26,20 @@ import com.game30.javagl.GLObject;
  * different details combine into the usage pattern of the buffer which is detailed by {@link GLBufferUsage}.
  *
  * @author Brian Norman
- * @version 1.0.0-SNAPSHOT
  * @since 1.0.0
  */
 public interface GLBuffer extends GLObject {
+
+    /**
+     * Static method to unbind any OpenGL buffer from the specified GLBufferTarget.  This will bind the NULL index to
+     * the target to clear any previously bound buffer.
+     *
+     * @param target the GLBufferTarget to unbind.
+     */
+    static void unbindTarget(GLBufferTarget target) {
+        GL15.glBindBuffer(target.glInt(), GLIndexed.NULL_INDEX);
+    }
+
 
     @Override
     default boolean exists() {
@@ -49,8 +59,7 @@ public interface GLBuffer extends GLObject {
 
     @Override
     default void unbind() {
-        GLDeletable.requireExists(this);
-        GL15.glBindBuffer(getTarget().glInt(), GLIndexed.NULL_INDEX);
+        unbindTarget(getTarget());
     }
 
     /**
