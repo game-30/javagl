@@ -1,15 +1,19 @@
 package com.game30.javagl.programs;
 
 import org.lwjgl.opengl.GL20;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Base class for {@link GLShader}s.  This provides basic source and stage behavior.
  *
  * @author Brian Norman
- * @version 1.0.0-SNAPSHOT
  * @since 1.0.0
  */
 public class GLShaderBase extends GLSLObjectBase implements GLShader {
+
+    /** The class logger. */
+    private static final Logger LOG = LoggerFactory.getLogger(GLShaderBase.class);
 
     /** The shader pipeline stage. */
     private final GLShaderStage stage;
@@ -41,6 +45,16 @@ public class GLShaderBase extends GLSLObjectBase implements GLShader {
     @Override
     public String getSource() {
         return source;
+    }
+
+    @Override
+    public void compile() {
+        GLShader.super.compile();
+        if (!getCompileStatus()) {
+            LOG.error("Could not compile [{}] shader [{}].", stage, this);
+            LOG.error(getInfoLog());
+            throw new GLShaderException("Could not compile [" + stage + "] shader [" + this + "]");
+        }
     }
 
     @Override
