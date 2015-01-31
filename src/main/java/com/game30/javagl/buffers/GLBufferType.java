@@ -13,7 +13,7 @@ import org.lwjgl.opengl.GL15;
 /**
  * An enumeration of the different primitive types which an OpenGL buffer can store.
  *
- * <p />This is sort of a hack class that gets around the restrictive nature of the LWJGL methods which only allow
+ * <p>This is sort of a hack class that gets around the restrictive nature of the LWJGL methods which only allow
  * specific types of {@link Buffer}s to be passed to the buffer write and read methods.  Each enumeration value contains
  * the behavior corresponding to the specific buffer type it represents.
  *

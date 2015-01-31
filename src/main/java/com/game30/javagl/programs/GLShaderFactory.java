@@ -34,6 +34,7 @@ public interface GLShaderFactory {
      * @param stage the shader pipeline stage.
      * @param path the shader source code path.
      * @return a new OpenGL shader.
+     * @throws java.io.IOException if there was a problem reading the from the specified path.
      */
     GLShader create(GLShaderStage stage, Path path) throws IOException;
 }

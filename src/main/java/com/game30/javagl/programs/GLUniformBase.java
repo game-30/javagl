@@ -35,9 +35,9 @@ public class GLUniformBase implements GLUniform {
     /**
      * Constructs a GLUniformBase with the specified index, name and type.
      *
-     * @param index
-     * @param name
-     * @param type
+     * @param index the uniform index.
+     * @param name the uniform name.
+     * @param type the uniform type.
      */
     protected GLUniformBase(int index, CharSequence name, GLUniformType type) {
         this(index, name);

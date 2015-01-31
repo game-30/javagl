@@ -32,6 +32,7 @@ public interface GLDeletable {
      * Validates that the specified GLDeletable still exists.  If it does not exist, a NullPointerException is thrown.
      *
      * @param deletable the OpenGL deletable object that needs to exist.
+     * @param <T> the type of GLDeletable.
      * @return returns the specified GLDeletable object.
      * @throws NullPointerException if the OpenGL deletable object does not exist.
      */

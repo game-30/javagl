@@ -14,12 +14,12 @@ import com.game30.javagl.GLObject;
  * the program will be output into a buffer.  So to render graphics, or to get the results of a calculation, an OpenGL
  * buffer needs to exist.
  *
- * <p />This interface provides some simple usage of an OpenGL buffer.  Since a buffer is an OpenGL object, it can be
+ * <p>This interface provides some simple usage of an OpenGL buffer.  Since a buffer is an OpenGL object, it can be
  * bound and unbound from the current context.  Each buffer has a specific {@link GLBufferTarget} that it is bound to.
  * Only one buffer can be bound to a specific usage at a time.  A buffer must be bound for data to be read or written to
  * it.
  *
- * <p />OpenGL buffers also have an expected usage pattern.  This describes to OpenGL how the buffer will be used.
+ * <p>OpenGL buffers also have an expected usage pattern.  This describes to OpenGL how the buffer will be used.
  * Buffers can be read-only, write-only, or have no access by the processor.  The buffer can be considered static,
  * dynamic or stream which describes how often the buffer might be accessed.  See {@link GLBufferUsageAccess} for
  * details on buffer access and {@link GLBufferUsageFrequency} for details on buffer access frequency.  These two

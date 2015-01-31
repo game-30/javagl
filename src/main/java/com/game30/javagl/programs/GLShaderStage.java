@@ -13,7 +13,7 @@ import com.game30.javagl.GLMagicIntegerException;
  * of programmable processing.  Each stage has a set of inputs and outputs, which are passed from prior stages and on to
  * subsequent stages (whether programmable or not).
  *
- * <p />While shader stages do use the same language, each stage has a separate set of inputs and outputs, as well as
+ * <p>While shader stages do use the same language, each stage has a separate set of inputs and outputs, as well as
  * built-in variables. As such, shader objects are built for a specific shader stage.  So while program objects can
  * contain multiple stages, shader objects only contain code for a single stage.
  *

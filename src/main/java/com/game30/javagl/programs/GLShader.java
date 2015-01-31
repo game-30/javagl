@@ -19,7 +19,7 @@ public interface GLShader extends GLSLObject {
     /**
      * {@inheritDoc}
      *
-     * <p />Default implementation is to request OpenGL to delete it.
+     * <p>Default implementation is to request OpenGL to delete it.
      */
     @Override
     default void delete() {
@@ -29,7 +29,7 @@ public interface GLShader extends GLSLObject {
     /**
      * {@inheritDoc}
      *
-     * <p />Default implementation is to query OpenGL for the integer representation of the delete status of the shader
+     * <p>Default implementation is to query OpenGL for the integer representation of the delete status of the shader
      * and compare it to the OpenGL magic integer {@link GL11#GL_TRUE}.
      */
     @Override
@@ -40,7 +40,7 @@ public interface GLShader extends GLSLObject {
     /**
      * Returns the stage of the shader.  The possible stages are enumerated by {@link GLShaderStage}.
      *
-     * <p />Default implementation is to query OpenGL for the integer representation of the stage and convert it to a
+     * <p>Default implementation is to query OpenGL for the integer representation of the stage and convert it to a
      * {@link GLShaderStage}.
      *
      * @return the stage of the shader.
@@ -53,7 +53,7 @@ public interface GLShader extends GLSLObject {
     /**
      * Sets the source of the shader.
      *
-     * <p />Default implementation is to pass the source to OpenGL as the source of the shader.
+     * <p>Default implementation is to pass the source to OpenGL as the source of the shader.
      *
      * @param source the source of the shader.
      */
@@ -64,7 +64,7 @@ public interface GLShader extends GLSLObject {
     /**
      * Returns the source of the shader as a {@code String}.
      *
-     * <p />Default Implementation is to query OpenGL for the length of the source.  Using this as the max length, query
+     * <p>Default Implementation is to query OpenGL for the length of the source.  Using this as the max length, query
      * OpenGL again for a buffer which is converted to a {@code String}.
      *
      * @return the source of the shader.
@@ -77,7 +77,7 @@ public interface GLShader extends GLSLObject {
     /**
      * Compiles the shader into a usable program.
      *
-     * <p />Default implementation is to invoke {@link GL20#glCompileShader(int)} with the shader index.
+     * <p>Default implementation is to invoke {@link GL20#glCompileShader(int)} with the shader index.
      */
     default void compile() {
         GLDeletable.requireExists(this);
@@ -87,7 +87,7 @@ public interface GLShader extends GLSLObject {
     /**
      * Returns the status form the last shader compilation attempt.
      *
-     * <p />Default implementation is to return {@code true} if the shader was successfully compiled; {@code false}
+     * <p>Default implementation is to return {@code true} if the shader was successfully compiled; {@code false}
      * otherwise.
      *
      * @return the status of the shader compilation.
@@ -101,7 +101,7 @@ public interface GLShader extends GLSLObject {
      * Returns the information log of the shader.  The information log is a log of the shader compilation.  If
      * compilation failed, this log will contain details as to why it failed.
      *
-     * <p />Default implementation is to query OpenGL for the length of the log.  Using this as the max length, query
+     * <p>Default implementation is to query OpenGL for the length of the log.  Using this as the max length, query
      * OpenGL again for a buffer which is converted to a {@code String}.
      *
      * @return the information log of the shader.

@@ -29,7 +29,7 @@ public interface GLVertexArray extends GLObject {
     /**
      * {@inheritDoc}
      *
-     * <p />Default implementation is to request of OpenGL if the vertex array exists.
+     * <p>Default implementation is to request of OpenGL if the vertex array exists.
      */
     @Override
     default boolean exists() {
@@ -39,7 +39,7 @@ public interface GLVertexArray extends GLObject {
     /**
      * {@inheritDoc}
      *
-     * <p />Default implementation is to request OpenGL to delete it.
+     * <p>Default implementation is to request OpenGL to delete it.
      */
     @Override
     default void delete() {
@@ -51,7 +51,7 @@ public interface GLVertexArray extends GLObject {
     /**
      * {@inheritDoc}
      *
-     * <p />Default implementation is to require existence then request OpenGL to bind the vertex array to the context.
+     * <p>Default implementation is to require existence then request OpenGL to bind the vertex array to the context.
      */
     @Override
     default void bind() {
@@ -62,7 +62,7 @@ public interface GLVertexArray extends GLObject {
     /**
      * {@inheritDoc}
      *
-     * <p />Default implementation is to unbind any vertex array currently bound to the context.
+     * <p>Default implementation is to unbind any vertex array currently bound to the context.
      */
     @Override
     default void unbind() {
@@ -72,7 +72,7 @@ public interface GLVertexArray extends GLObject {
     /**
      * Enables the specified OpenGL GLSL program attribute.
      *
-     * <p />Default implementation is to bind the vertex array then enable the attribute index.
+     * <p>Default implementation is to bind the vertex array then enable the attribute index.
      *
      * @param attribute the OpenGL GLSL program attribute to enable for this vertex array.
      */
@@ -84,7 +84,7 @@ public interface GLVertexArray extends GLObject {
     /**
      * Disables the specified OpenGL GLSL program attribute.
      *
-     * <p />Default implementation is to bind the vertex array then disable the attribute index.
+     * <p>Default implementation is to bind the vertex array then disable the attribute index.
      *
      * @param attribute the OpenGL GLSL program attribute to disable for this vertex array.
      */
@@ -96,7 +96,7 @@ public interface GLVertexArray extends GLObject {
     /**
      * Attaches the specified OpenGL buffer to the specified OpenGL GLSL program attribute.
      *
-     * <p />Default implementation is to enable the attribute index, bind the specified buffer, set the vertex attribute
+     * <p>Default implementation is to enable the attribute index, bind the specified buffer, set the vertex attribute
      * pointer, then unbind the specified buffer.
      *
      * @param attribute the OpenGL GLSL program attribute to attach a OpenGL buffer.

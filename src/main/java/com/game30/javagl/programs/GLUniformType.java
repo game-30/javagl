@@ -13,7 +13,7 @@ import org.lwjgl.opengl.GL40;
 /**
  * An enumeration of the different uniform types available in the OpenGL Scripting Language.
  *
- * <p />This is sort of a hack class that gets around the restrictive nature of the LWJGL methods requires a different
+ * <p>This is sort of a hack class that gets around the restrictive nature of the LWJGL methods requires a different
  * method for each uniform type.  Each of the uniform types defined in this enumeration knows which method it needs to
  * call write a generic {@link Buffer} to the uniform.
  *
@@ -382,7 +382,7 @@ public enum GLUniformType {
      *
      * @return the size of the uniform.
      */
-    int getSize() {
+    public int getSize() {
         return size;
     }
 

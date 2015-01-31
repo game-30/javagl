@@ -20,7 +20,7 @@ public interface GLProgram extends GLSLObject {
     /**
      * {@inheritDoc}
      *
-     * <p />Default implementation is to query OpenGL for the integer representation of the delete status of the program
+     * <p>Default implementation is to query OpenGL for the integer representation of the delete status of the program
      * and compare it to the OpenGL magic integer {@link GL11#GL_TRUE}.
      */
     @Override
@@ -31,7 +31,7 @@ public interface GLProgram extends GLSLObject {
     /**
      * {@inheritDoc}
      *
-     * <p />Default implementation is to request OpenGL to delete it.
+     * <p>Default implementation is to request OpenGL to delete it.
      */
     @Override
     default void delete() {
@@ -40,22 +40,51 @@ public interface GLProgram extends GLSLObject {
         }
     }
 
+    /**
+     * TODO
+     *
+     * <p>Default implementation TODO
+     */
     default void use() {
         GL20.glUseProgram(getIndex());
     }
 
+    /**
+     * TODO
+     *
+     * <p>Default implementation TODO
+     */
     default void link() {
         GL20.glLinkProgram(getIndex());
     }
 
+    /**
+     * TODO
+     *
+     * <p>Default implementation TODO
+     *
+     * @return TODO
+     */
     default boolean getLinkStatus() {
         return GL20.glGetProgrami(getIndex(), GL20.GL_LINK_STATUS) == GL11.GL_TRUE;
     }
 
+    /**
+     * TODO
+     *
+     * <p>Default implementation TODO
+     */
     default void validate() {
         GL20.glValidateProgram(getIndex());
     }
 
+    /**
+     * TODO
+     *
+     * <p>Default implementation TODO
+     *
+     * @return TODO
+     */
     default boolean getValidateStatus() {
         return GL20.glGetProgrami(getIndex(), GL20.GL_VALIDATE_STATUS) == GL11.GL_TRUE;
     }
@@ -64,7 +93,7 @@ public interface GLProgram extends GLSLObject {
      * Returns the information log of the program.  The information log is a log of the program linking or validation.
      * If linking or validation failed, this log will contain details as to why they failed.
      *
-     * <p />Default implementation is to query OpenGL for the length of the log.  Using this as the max length, query
+     * <p>Default implementation is to query OpenGL for the length of the log.  Using this as the max length, query
      * OpenGL again for a buffer which is converted to a {@code String}.
      *
      * @return the information log of the program.
@@ -78,7 +107,7 @@ public interface GLProgram extends GLSLObject {
      * Attaches the specified {@link GLShader} object to the program.  Shaders that are to be linked together in a
      * program object must first be attached to that program object.
      *
-     * <p />Default implementation TODO
+     * <p>Default implementation TODO
      *
      * @param shader the {@link GLShader} to attach.
      */
@@ -89,7 +118,7 @@ public interface GLProgram extends GLSLObject {
     /**
      * Detaches the specified {@link GLShader} object from the program.
      *
-     * <p />Default implementation TODO
+     * <p>Default implementation TODO
      *
      * @param shader the the {@link GLShader} to detach.
      */

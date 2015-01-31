@@ -51,6 +51,11 @@ public class GLAttributeBase implements GLAttribute {
      *
      * @param index the attribute index.
      * @param name the attribute name.
+     * @param size the attribute size.
+     * @param type the attribute type.
+     * @param normalized if the attribute is normalized.
+     * @param stride the attribute stride.
+     * @param offset the attribute offset.
      */
     protected GLAttributeBase(int index, CharSequence name, int size, GLAttributeType type, boolean normalized,
                               int stride, int offset) {
