@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 public class GLShaderBase extends GLSLObjectBase implements GLShader {
 
     /** The class logger. */
-    private static final Logger LOG = LoggerFactory.getLogger(GLShaderBase.class);
+    private static final Logger log = LoggerFactory.getLogger(GLShaderBase.class);
 
     /** The shader pipeline stage. */
     private final GLShaderStage stage;
@@ -51,8 +51,8 @@ public class GLShaderBase extends GLSLObjectBase implements GLShader {
     public void compile() {
         GLShader.super.compile();
         if (!getCompileStatus()) {
-            LOG.error("Could not compile [{}] shader [{}].", stage, this);
-            LOG.error(getInfoLog());
+            log.error("Could not compile [{}] shader [{}].", stage, this);
+            log.error(getInfoLog());
             throw new GLShaderException("Could not compile [" + stage + "] shader [" + this + "]");
         }
     }
