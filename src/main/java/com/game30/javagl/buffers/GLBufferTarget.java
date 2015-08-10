@@ -60,14 +60,14 @@ public enum GLBufferTarget implements GLMagicInteger {
      * object data with glCopyBufferSubData.  You do not have to use this target when copying, but by using it, you
      * avoid disturbing buffer targets that have actual semantics.
      */
-    CopyRead(GL31.GL_COPY_READ_BUFFER, GL31.GL_COPY_READ_BUFFER_BINDING),
+    CopyRead(GL31.GL_COPY_READ_BUFFER, GL31.GL_COPY_READ_BUFFER),
 
     /**
      * This has no particular semantics.  Because it has no actual meaning, it is a useful target for copying buffer
      * object data with glCopyBufferSubData.  You do not have to use this target when copying, but by using it, you
      * avoid disturbing buffer targets that have actual semantics.
      */
-    CopyWrite(GL31.GL_COPY_WRITE_BUFFER, GL31.GL_COPY_WRITE_BUFFER_BINDING),
+    CopyWrite(GL31.GL_COPY_WRITE_BUFFER, GL31.GL_COPY_WRITE_BUFFER),
 
     /**
      * This target has no special semantics, but if you intend to use a buffer object for Buffer Textures, it is a good
@@ -176,9 +176,9 @@ public enum GLBufferTarget implements GLMagicInteger {
                 return GLBufferTarget.PixelUnpack;
             case GL30.GL_TRANSFORM_FEEDBACK_BUFFER_BINDING:
                 return GLBufferTarget.TransformFeedback;
-            case GL31.GL_COPY_READ_BUFFER_BINDING:
+            case GL31.GL_COPY_READ_BUFFER:
                 return GLBufferTarget.CopyRead;
-            case GL31.GL_COPY_WRITE_BUFFER_BINDING:
+            case GL31.GL_COPY_WRITE_BUFFER:
                 return GLBufferTarget.CopyWrite;
             case GL31.GL_TEXTURE_BINDING_BUFFER:
                 return GLBufferTarget.Texture;

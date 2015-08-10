@@ -28,7 +28,7 @@ public enum GLUniformType {
     Integer(1) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL20.glUniform1(position, (IntBuffer) data);
+            GL20.glUniform1iv(position, (IntBuffer) data);
         }
     },
 
@@ -38,7 +38,7 @@ public enum GLUniformType {
     Integer2(2) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL20.glUniform2(position, (IntBuffer) data);
+            GL20.glUniform2iv(position, (IntBuffer) data);
         }
     },
 
@@ -48,7 +48,7 @@ public enum GLUniformType {
     Integer3(3) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL20.glUniform3(position, (IntBuffer) data);
+            GL20.glUniform3iv(position, (IntBuffer) data);
         }
     },
 
@@ -58,7 +58,7 @@ public enum GLUniformType {
     Integer4(4) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL20.glUniform4(position, (IntBuffer) data);
+            GL20.glUniform4iv(position, (IntBuffer) data);
         }
     },
 
@@ -68,7 +68,7 @@ public enum GLUniformType {
     UnsignedInteger(1) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL30.glUniform1u(position, (IntBuffer) data);
+            GL30.glUniform1uiv(position, (IntBuffer) data);
         }
     },
 
@@ -78,7 +78,7 @@ public enum GLUniformType {
     UnsignedInteger2(2) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL30.glUniform2u(position, (IntBuffer) data);
+            GL30.glUniform2uiv(position, (IntBuffer) data);
         }
     },
 
@@ -88,7 +88,7 @@ public enum GLUniformType {
     UnsignedInteger3(3) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL30.glUniform3u(position, (IntBuffer) data);
+            GL30.glUniform3uiv(position, (IntBuffer) data);
         }
     },
 
@@ -98,7 +98,7 @@ public enum GLUniformType {
     UnsignedInteger4(4) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL30.glUniform4u(position, (IntBuffer) data);
+            GL30.glUniform4uiv(position, (IntBuffer) data);
         }
     },
 
@@ -108,7 +108,7 @@ public enum GLUniformType {
     Float(1) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL20.glUniform1(position, (FloatBuffer) data);
+            GL20.glUniform1fv(position, (FloatBuffer) data);
         }
     },
 
@@ -118,7 +118,7 @@ public enum GLUniformType {
     Float2(2) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL20.glUniform2(position, (FloatBuffer) data);
+            GL20.glUniform2fv(position, (FloatBuffer) data);
         }
     },
 
@@ -128,7 +128,7 @@ public enum GLUniformType {
     Float3(3) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL20.glUniform3(position, (FloatBuffer) data);
+            GL20.glUniform3fv(position, (FloatBuffer) data);
         }
     },
 
@@ -138,7 +138,7 @@ public enum GLUniformType {
     Float4(4) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL20.glUniform4(position, (FloatBuffer) data);
+            GL20.glUniform4fv(position, (FloatBuffer) data);
         }
     },
 
@@ -148,7 +148,7 @@ public enum GLUniformType {
     FloatMatrix2(4) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL20.glUniformMatrix2(position, false, (FloatBuffer) data);
+            GL20.glUniformMatrix2fv(position, false, (FloatBuffer) data);
         }
     },
 
@@ -158,7 +158,7 @@ public enum GLUniformType {
     FloatMatrix3(9) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL20.glUniformMatrix3(position, false, (FloatBuffer) data);
+            GL20.glUniformMatrix3fv(position, false, (FloatBuffer) data);
         }
     },
 
@@ -168,7 +168,7 @@ public enum GLUniformType {
     FloatMatrix4(16) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL20.glUniformMatrix4(position, false, (FloatBuffer) data);
+            GL20.glUniformMatrix4fv(position, false, (FloatBuffer) data);
         }
     },
 
@@ -178,7 +178,7 @@ public enum GLUniformType {
     FloatMatrix2x3(6) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL21.glUniformMatrix2x3(position, false, (FloatBuffer) data);
+            GL21.glUniformMatrix2x3fv(position, false, (FloatBuffer) data);
         }
     },
 
@@ -188,7 +188,7 @@ public enum GLUniformType {
     FloatMatrix3x2(6) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL21.glUniformMatrix3x2(position, false, (FloatBuffer) data);
+            GL21.glUniformMatrix3x2fv(position, false, (FloatBuffer) data);
         }
     },
 
@@ -198,7 +198,7 @@ public enum GLUniformType {
     FloatMatrix2x4(8) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL21.glUniformMatrix2x4(position, false, (FloatBuffer) data);
+            GL21.glUniformMatrix2x4fv(position, false, (FloatBuffer) data);
         }
     },
 
@@ -208,7 +208,7 @@ public enum GLUniformType {
     FloatMatrix4x2(8) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL21.glUniformMatrix4x2(position, false, (FloatBuffer) data);
+            GL21.glUniformMatrix4x2fv(position, false, (FloatBuffer) data);
         }
     },
 
@@ -218,7 +218,7 @@ public enum GLUniformType {
     FloatMatrix3x4(12) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL21.glUniformMatrix3x4(position, false, (FloatBuffer) data);
+            GL21.glUniformMatrix3x4fv(position, false, (FloatBuffer) data);
         }
     },
 
@@ -228,7 +228,7 @@ public enum GLUniformType {
     FloatMatrix4x3(12) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL21.glUniformMatrix4x3(position, false, (FloatBuffer) data);
+            GL21.glUniformMatrix4x3fv(position, false, (FloatBuffer) data);
         }
     },
 
@@ -238,7 +238,7 @@ public enum GLUniformType {
     Double(1) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL40.glUniform1(position, (DoubleBuffer) data);
+            GL40.glUniform1dv(position, (DoubleBuffer) data);
         }
     },
 
@@ -248,7 +248,7 @@ public enum GLUniformType {
     Double2(2) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL40.glUniform2(position, (DoubleBuffer) data);
+            GL40.glUniform2dv(position, (DoubleBuffer) data);
         }
     },
 
@@ -258,7 +258,7 @@ public enum GLUniformType {
     Double3(3) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL40.glUniform3(position, (DoubleBuffer) data);
+            GL40.glUniform3dv(position, (DoubleBuffer) data);
         }
     },
 
@@ -268,7 +268,7 @@ public enum GLUniformType {
     Double4(4) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL40.glUniform4(position, (DoubleBuffer) data);
+            GL40.glUniform4dv(position, (DoubleBuffer) data);
         }
     },
 
@@ -278,7 +278,7 @@ public enum GLUniformType {
     DoubleMatrix2(4) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL40.glUniformMatrix2(position, false, (DoubleBuffer) data);
+            GL40.glUniformMatrix2dv(position, false, (DoubleBuffer) data);
         }
     },
 
@@ -288,7 +288,7 @@ public enum GLUniformType {
     DoubleMatrix3(16) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL40.glUniformMatrix3(position, false, (DoubleBuffer) data);
+            GL40.glUniformMatrix3dv(position, false, (DoubleBuffer) data);
         }
     },
 
@@ -298,7 +298,7 @@ public enum GLUniformType {
     DoubleMatrix4(16) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL40.glUniformMatrix4(position, false, (DoubleBuffer) data);
+            GL40.glUniformMatrix4dv(position, false, (DoubleBuffer) data);
         }
     },
 
@@ -308,7 +308,7 @@ public enum GLUniformType {
     DoubleMatrix2x3(6) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL40.glUniformMatrix2x3(position, false, (DoubleBuffer) data);
+            GL40.glUniformMatrix2x3dv(position, false, (DoubleBuffer) data);
         }
     },
 
@@ -318,7 +318,7 @@ public enum GLUniformType {
     DoubleMatrix3x2(6) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL40.glUniformMatrix3x2(position, false, (DoubleBuffer) data);
+            GL40.glUniformMatrix3x2dv(position, false, (DoubleBuffer) data);
         }
     },
 
@@ -328,7 +328,7 @@ public enum GLUniformType {
     DoubleMatrix2x4(8) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL40.glUniformMatrix2x4(position, false, (DoubleBuffer) data);
+            GL40.glUniformMatrix2x4dv(position, false, (DoubleBuffer) data);
         }
     },
 
@@ -338,7 +338,7 @@ public enum GLUniformType {
     DoubleMatrix4x2(8) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL40.glUniformMatrix4x2(position, false, (DoubleBuffer) data);
+            GL40.glUniformMatrix4x2dv(position, false, (DoubleBuffer) data);
         }
     },
 
@@ -348,7 +348,7 @@ public enum GLUniformType {
     DoubleMatrix3x4(12) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL40.glUniformMatrix3x4(position, false, (DoubleBuffer) data);
+            GL40.glUniformMatrix3x4dv(position, false, (DoubleBuffer) data);
         }
     },
 
@@ -358,7 +358,7 @@ public enum GLUniformType {
     DoubleMatrix4x3(12) {
         @Override
         void writeUniform(int position, Buffer data) {
-            GL40.glUniformMatrix4x3(position, false, (DoubleBuffer) data);
+            GL40.glUniformMatrix4x3dv(position, false, (DoubleBuffer) data);
         }
     },
 

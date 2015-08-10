@@ -78,38 +78,37 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>com.googlecode.mavennatives</groupId>
-                <artifactId>maven-nativedependencies-plugin</artifactId>
-                <version>0.0.7</version>
-                <executions>
-                    <execution>
-                        <id>unpacknatives</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 
     <properties>
-        <lwjgl.version>2.9.1</lwjgl.version>
+        <lwjgl.version>3.0.0a</lwjgl.version>
         <slf4j.version>1.7.7</slf4j.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.lwjgl.lwjgl</groupId>
+            <groupId>org.lwjgl</groupId>
             <artifactId>lwjgl</artifactId>
             <version>${lwjgl.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.lwjgl.lwjgl</groupId>
-            <artifactId>lwjgl_util</artifactId>
+            <groupId>org.lwjgl</groupId>
+            <artifactId>lwjgl-platform</artifactId>
             <version>${lwjgl.version}</version>
+            <classifier>natives-windows</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.lwjgl</groupId>
+            <artifactId>lwjgl-platform</artifactId>
+            <version>${lwjgl.version}</version>
+            <classifier>natives-osx</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.lwjgl</groupId>
+            <artifactId>lwjgl-platform</artifactId>
+            <version>${lwjgl.version}</version>
+            <classifier>natives-linux</classifier>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
